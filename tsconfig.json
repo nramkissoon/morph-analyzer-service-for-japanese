@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "noImplicitAny": false,
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ]
+        },
+        "lib": ["ES2020"]
+    },
+    "include": [
+        "src/**/*",
+    ]
+  }

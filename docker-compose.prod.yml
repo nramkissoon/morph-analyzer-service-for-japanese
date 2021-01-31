@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+    dev_server:
+        container_name: morph_analyzer_production_server
+        build:
+            context: .
+            target: production
+        command: npm run start
+        volumes: # allows changes to be made in this directory to be applied to container
+            - .:/usr/src/server
+        ports:
+            - "8080:8080"
