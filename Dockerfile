@@ -15,6 +15,4 @@ FROM development AS production
 
 WORKDIR /usr/src/server
 
-RUN npm run build
-
 EXPOSE 8080

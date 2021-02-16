@@ -6,7 +6,9 @@ services:
         build:
             context: .
             target: production
-        command: npm run start
+        command: bash -c "npm run build && npm run start"
+        environment: 
+            NODE_ENV: production
         volumes: # allows changes to be made in this directory to be applied to container
             - .:/usr/src/server
         ports:
