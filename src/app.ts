@@ -4,6 +4,7 @@ import 'reflect-metadata';
 import { GRAPHQL_ENDPOINT_PATH } from './utils/consts';
 import { QueryResolver } from './graphql/resolvers/query';
 import { buildSchema } from 'type-graphql';
+import { logger } from './utils/logger';
 import cors from 'cors';
 
 const main = async () => {
@@ -25,7 +26,9 @@ const main = async () => {
         path: GRAPHQL_ENDPOINT_PATH,
     });
 
-    expressApp.listen({ port: 8080 }, () => console.log(`Server ready at http://localhost:8080${server.graphqlPath}`));
+    expressApp.listen({ port: 8080 }, () =>
+        logger.log('info', `Server ready at http://localhost:8080${server.graphqlPath}`),
+    );
 };
 
 main();
