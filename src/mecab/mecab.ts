@@ -1,7 +1,6 @@
 import MeCab from 'mecab-async';
 import { MecabOutput, convertToMecabOutputWord, MecabOutputError } from './mecabOutput';
 import { MECAB_ERRORS } from './mecabConsts';
-import { logger } from './../utils/logger';
 
 const mecabOptions = {
     maxBuffer: 300 * 1024 * 8, // 300kb
@@ -41,7 +40,6 @@ export const mecabParseSync = (text: string): MecabOutput => {
         });
         return mecabOutput;
     } catch (error) {
-        logger.log('error', 'unknown mecab error');
         const mecabOutputError: MecabOutputError = {
             name: MECAB_ERRORS.UNKNOWN.NAME,
             message: MECAB_ERRORS.UNKNOWN.MESSAGE,
